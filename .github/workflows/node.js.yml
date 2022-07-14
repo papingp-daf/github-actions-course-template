@@ -24,8 +24,8 @@ jobs:
           name: webpack artifacts
           path: public/
     
-    test: 
-      runs-on: ubuntu-latest
+  test: 
+    runs-on: ubuntu-latest
       
     strategy:
       matrix:
@@ -40,9 +40,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-  - name: npm install, and test
-    run: 
-      npm install
-      npm test
+    - name: npm install, and test
+      run: 
+        npm install
+        npm test
     env: 
       CI: true
